@@ -53,24 +53,38 @@
 
 
 class Parrot {
+  constructor(name){
+    this.name = name;
+  }
   speak(){
-    return 'Joshua want a cracker!';
+    return `${this.name} want a cracker!`;
    }
 }
 
 class ApprenticeParrot extends Parrot {
- speak(){
-  return '😴';
- }
+  
+  constructor(name){
+    super(name);
+    this.counter = 0;
+  }
+  speak(){
+    if(this.counter < 3){
+      this.counter++;
+      return '😴';
+    }else{
+      return super.speak();
+    }
+    
+  }
 }
 
 let polly = new Parrot("Polly");
 console.log(polly.speak());
 // returns "Polly want a cracker!"
 
-
-const me = new ApprenticeParrot("Your Name");
-console.log(me.speak());
-// return "😴"
-
+let billy = new ApprenticeParrot('Billy'); 
+console.log(billy.speak());
+console.log(billy.speak());
+console.log(billy.speak());
+console.log(billy.speak());
 module.exports = {Parrot, ApprenticeParrot};
