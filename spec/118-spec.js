@@ -18,6 +18,6 @@ describe("Challenge 118:", () => {
     billy.speak()
     billy.speak()
     billy.speak()
-    expect(billy.speak()).toEqual('😴');
+    expect(billy.speak()).toEqual('Billy want a cracker!');
   });
 });
